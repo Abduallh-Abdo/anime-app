@@ -24,8 +24,8 @@ class animeDetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 350,
-              height: 350,
+              width: 300,
+              height: 300,
               child: Image.asset(
                 anime.imgURL,
                 fit: BoxFit.fill,
