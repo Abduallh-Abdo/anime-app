@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:  Colors.teal,
+        backgroundColor: Colors.teal,
         title: const Text(
           'Grid view',
           style: TextStyle(
@@ -19,26 +19,28 @@ class Home extends StatelessWidget {
         ),
       ),
       body: GridView.builder(
-          itemCount: 12,
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemBuilder: (context, index) {
-            Anime anime = animeList[index];
-            return Category(
-              pic: anime.imgURL,
-              name: anime.title,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => animeDetails(
-                      anime: anime,
-                    ),
+           itemCount: animeList.length,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (context, index) {
+          Anime anime = animeList[index];
+          return Category(
+            pic: anime.imgURL,
+            name: anime.title,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => animeDetails(
+                    anime: anime,
                   ),
-                );
-              },
-            );
-          }),
+                ),
+              );
+            },
+          );
+        },
+      ),
+   
     );
   }
 }
